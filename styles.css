@@ -35,6 +35,7 @@
 }
 
 section {
+  max-width: 1440px;
   padding: 0 20px;
 }
 :root {
@@ -43,6 +44,7 @@ section {
   --color-secondary-dark: #000000;
   --color-secondary-light: #ffffff;
   --color-secondary-text: #4a4a4a;
+  --color-secondary-bsase: #dfdfdf;
 }
 
 h1,
@@ -65,47 +67,134 @@ body {
 }
 
 ul {
-  list-style-type: none;
-}
-
-.link {
   text-decoration: none;
-  color: var(--color-primary-dark);
-}
-
-.link :hover {
-  color: var(--color-primary-ligh);
-}
-
-.before-title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  list-style-type: none;
+  padding: 0;
   margin: 0;
 }
 
-.title {
-  font-family: 'Play', sans-serif;
-  font-weight: 700;
-  font-size: 140px;
-  line-height: 1.22;
-  margin: 0;
-  color: var(--color-primary-light);
-}
-
+/* Button */
 .button {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   color: var(--color-secondary-light);
   background-color: var(--color-primary-light);
   border: 2px solid var(--color-primary-light);
-  border-radius: 32px;
+  max-width: 219px;
+  max-height: 103px;
+  border-radius: 53px;
   cursor: pointer;
+  padding: 16px 32px;
+}
+
+.button:hover {
+  color: var(--color-primary-dark);
+  background-color: var(--color-secondary-bsase);
+}
+
+/* Link */
+.link {
+  text-decoration: none;
+  color: var(--color-primary-dark);
+}
+
+.link:hover {
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/*  Header section */
+.header__container {
+  height: 100%;
+  max-height: 106px;
+  max-width: 1267px;
+  display: flex;
+  justify-content: center;
+  padding: 42px 0;
+  gap: 240px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 240px;
+}
+
+.header__menu {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+}
+
+.header__socials {
+  display: flex;
+  gap: 32px;
+}
+
+.header__address-icon {
+  fill: var(--color-primary-dark);
+}
+/* Hero section */
+.hero-section {
+  padding-bottom: 270px;
+  background: linear-gradient(
+      89.38deg,
+      #ffffff 30.62%,
+      rgba(255, 255, 255, 0.850898) 41.31%,
+      rgba(255, 255, 255, 0.193204) 58.65%,
+      rgba(255, 255, 255, 0) 72.78%
+    ),
+    url(/images/beautician.jpg);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: cover;
+}
+
+.hero-section__container {
+  max-width: 530px;
+  max-height: 408px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero-section__text {
+  padding-left: 206px;
+}
+
+.before-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+.title {
+  font-family: 'Play', sans-serif;
+  font-weight: 700;
+  font-size: 140px;
+  line-height: 0.81;
+  margin: 0;
+  color: var(--color-primary-light);
 }
 
 .text-term {
   color: var(--color-secondary-text);
   font-size: 12px;
   line-height: 1.5;
+  align-items: right;
 }
 
 .section-title {
@@ -113,19 +202,84 @@ ul {
   font-weight: 700;
   line-height: 1.11;
   font-size: 64px;
+  max-width: 529px;
+}
+
+.button-hero {
+  display: flex;
+  flex-direction: column;
+  max-width: 238px;
+  max-height: 103px;
+  gap: 14px;
+  text-align: center;
 }
 
 .text-color {
   color: var(--color-primary-light);
 }
 
+/* Description section */
+
+.description-section__container {
+  display: flex;
+  max-width: 1240px;
+  gap: 40px;
+}
+
+.description-section__content {
+  max-width: 709px;
+  padding-top: 40px;
+}
 .text-description {
   line-height: 1.73;
   font-size: 22px;
+  padding-top: 40px;
 }
 
 .text-bold {
   font-weight: 600;
+}
+
+.description-section__image {
+  border-radius: 50%;
+}
+
+.description-section__image:last-child {
+  float: right; /* вирівнювання по правому краю */
+}
+
+/* Why_Me section */
+
+.whyWe-section__container {
+  max-width: 1060px;
+  text-align: center;
+  margin-bottom: 96px;
+}
+
+.whyMe-title {
+  max-width: 442px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.whyWe-section__advantages {
+  display: flex;
+  gap: 56px;
+}
+
+.whyWe-section__advantage {
+  border-radius: 32px;
+  max-width: 316px;
+  max-height: 181px;
+  background-color: coral; /* тестовий фон*/
+}
+
+.section-title.centered {
+  text-align: center;
+}
+
+.advantage-card {
+  padding: 24px 32px;
 }
 
 .text-advantages {
@@ -137,13 +291,76 @@ ul {
   line-height: 1.18;
   font-size: 22px;
   color: var(--color-secondary-light);
+  position: absolute;
+  top: 372px;
+  left: 115px;
+  text-align: center;
 }
 
-.title-form {
-  line-height: 1.18;
-  font-size: 22px;
-  color: var(--color-secondary-light);
-  font-weight: 600;
+/* Procedures section */
+
+.procedures-title {
+  max-width: 520px;
+  margin: 0 auto;
+  padding-bottom: 48px;
+}
+
+.procedures-section__slider {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+/* Carousel */
+.carousel-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid var(--color-primary-dark);
+}
+
+.carousel-button:hover {
+  background-color: var(--color-primary-light);
+  border: 1px solid var(--color-primary-light);
+}
+
+.carousel-arrow {
+  fill: var(--color-primary-dark);
+}
+
+.carousel-button:hover .carousel-arrow {
+  fill: var(--color-secondary-light);
+}
+
+.procedure-list {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.procedure-img {
+  border-radius: 4px 120px 4px 120px;
+  background-image: linear-gradient(
+    180.05deg,
+    rgba(1, 28, 68, 0) 48.53%,
+    rgba(1, 28, 68, 0.725825) 84.61%,
+    #011c44 101.39%
+  );
+}
+
+.image {
+  position: relative;
+  z-index: -1;
+  border-radius: 4px 120px 4px 120px;
+}
+
+/* Contact section */
+.contacts-section__container {
+  max-width: 1059px;
+  margin-top: 96px;
+  margin-bottom: 94px;
 }
 
 .input::placeholder {
@@ -161,14 +378,128 @@ ul {
   font-size: 16px;
   color: var(--color-secondary-light);
   text-decoration: none;
+  font-style: normal;
 }
 
 .address-copyright {
   font-size: 13px;
   line-height: 1.73;
   color: var(--color-secondary-text);
+  font-style: normal;
 }
 
 footer {
   background-color: var(--color-primary-dark);
+  position: relative;
 }
+
+.contact-container {
+  display: flex;
+  flex-shrink: 0;
+  gap: 32px;
+}
+
+.title-form {
+  line-height: 1.18;
+  font-size: 22px;
+  color: var(--color-secondary-light);
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 32px;
+}
+
+.contact-map {
+  border-radius: 32px;
+  border: none;
+}
+
+.contact-form-box {
+  max-width: 423px;
+  border-radius: 32px;
+  background-color: var(--color-primary-dark);
+}
+
+.form-container {
+  padding: 48px 56px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  padding: 18px 32px;
+  border-radius: 32px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  border: 2px solid var(--color-secondary-text);
+  width: 100%;
+  background-color: transparent;
+}
+
+.input:hover {
+  background-color: var(--color-secondary-text);
+}
+
+.form-button {
+  display: block;
+  max-width: 282px;
+  margin: 0 auto; /* центрування кнопки*/
+  margin-bottom: 8px;
+}
+
+.text-term {
+  max-width: 206px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer-container {
+  display: flex;
+  padding: 56px 0;
+  gap: 20px;
+}
+
+.footer-nav,
+.footer__address {
+  display: flex;
+  gap: 20px;
+  flex-basis: 50%;
+  justify-content: space-around;
+}
+
+.footer__menu,
+.footer__address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.icon {
+  fill: var(--color-secondary-light);
+}
+
+.footer-icon {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .footer::before,
+::after {
+  position: absolute;
+  content: '';
+  background-repeat: no-repeat;
+  bottom: 0;
+}
+
+.footer::after {
+  width: 278px;
+  height: 213px;
+  right: 0;
+
+  background-image: url(/images/medicine-bottle.jpg);
+} */
